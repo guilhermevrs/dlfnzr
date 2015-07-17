@@ -20,6 +20,12 @@ function translate(a,b,c){
 
     client.on( "ready", function( readyEvent ) {
         alert( "ZeroClipboard SWF is ready!" );
+
+        client.on( "copy", function (event) {
+  var clipboard = event.clipboardData;
+  clipboard.setData( "text/plain", "Copy me!" );
+});
+
         client.on( "aftercopy", function( event ) {
             // `this` === `client`
             // `event.target` === the element that was clicked
