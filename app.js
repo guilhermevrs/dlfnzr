@@ -14,7 +14,7 @@ function translate(a,b,c){
     var frmInput = document.getElementById("frmInput");
     frmInput.onsubmit = translate;
 
-    ZeroClipboard.config( { swfPath: "https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.swf" } );
+    ZeroClipboard.config( { swfPath: "//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.swf" } );
 
     var client = new ZeroClipboard( document.getElementById("copy-button") );
 
