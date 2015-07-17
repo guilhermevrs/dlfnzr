@@ -3,7 +3,7 @@ function translate(a,b,c){
     var inputText = document.getElementById("inputArea");
 
     var resultText = document.getElementById("result-text");
-    resultText.textContent = inputText.value.replace(/a|e|i|o|u/gi, '');
+    resultText.textContent = inputText.value.replace(/a|e|i|o|u|á|à|ã|é|í|ó|ú/gi, '');
 
     var resultCard = document.getElementById("result-card");
     resultCard.removeAttribute("style");
