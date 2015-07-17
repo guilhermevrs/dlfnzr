@@ -8,7 +8,7 @@ function translate(){
     var copiedTextMsg = document.getElementById("copied-text-msg");
     copiedTextMsg.style.display = "None";
     var copyBtn = document.getElementById("copy-button");
-    copyBtn.style.display = "block";
+    copyBtn.removeAttribute("style");
 
     var resultCard = document.getElementById("result-card");
     resultCard.removeAttribute("style");
