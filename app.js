@@ -13,4 +13,18 @@ function translate(a,b,c){
 (function(){
     var frmInput = document.getElementById("frmInput");
     frmInput.onsubmit = translate;
+
+    ZeroClipboard.config( { swfPath: "https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.swf" } );
+
+    var client = new ZeroClipboard( document.getElementById("copy-button") );
+
+    client.on( "ready", function( readyEvent ) {
+        alert( "ZeroClipboard SWF is ready!" );
+        client.on( "aftercopy", function( event ) {
+            // `this` === `client`
+            // `event.target` === the element that was clicked
+            event.target.style.display = "none";
+            alert("Copied text to clipboard: " + event.data["text/plain"] );
+        } );
+    } );
 })();
