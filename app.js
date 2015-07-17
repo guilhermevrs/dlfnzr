@@ -14,9 +14,14 @@ function translate(){
     var frmInput = document.getElementById("frmInput");
     frmInput.onsubmit = translate;
 
+    var resultText = document.getElementById("result-text");
     ZeroClipboard.config( { swfPath: "//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.swf" } );
     var client = new ZeroClipboard( document.getElementById("copy-button") );
     client.on( "ready", function( readyEvent ) {
+        client.on("copy", function(event){
+            var clipboard = event.clipboardData;
+            clipboard.setData( "text/plain", resultText.textContent );
+        });
         client.on( "aftercopy", function( event ) {
             event.target.style.display = "none";
         });
