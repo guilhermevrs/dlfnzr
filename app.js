@@ -1,4 +1,4 @@
-function translate(a,b,c){
+function translate(){
 
     var inputText = document.getElementById("inputArea");
 
@@ -15,22 +15,10 @@ function translate(a,b,c){
     frmInput.onsubmit = translate;
 
     ZeroClipboard.config( { swfPath: "//cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.swf" } );
-
     var client = new ZeroClipboard( document.getElementById("copy-button") );
-
     client.on( "ready", function( readyEvent ) {
-        alert( "ZeroClipboard SWF is ready!" );
-
-        client.on( "copy", function (event) {
-  var clipboard = event.clipboardData;
-  clipboard.setData( "text/plain", "Copy me!" );
-});
-
         client.on( "aftercopy", function( event ) {
-            // `this` === `client`
-            // `event.target` === the element that was clicked
             event.target.style.display = "none";
-            alert("Copied text to clipboard: " + event.data["text/plain"] );
-        } );
+        });
     } );
 })();
